@@ -1,7 +1,14 @@
+$mydarkolive: #6e8a2f;
+$mymildolive: #a1be39;
+
 .bg-green {
-  background: #6e8a2f;
+  background: $mydarkolive;
 }
 .btn-green {
-  background: #6e8a2f;
-  color: #ffffff;
+  background: $mydarkolive;
+  color: white;
+  &:hover {
+    background: $mymildolive;
+    color: yellow;
+  }
 }
