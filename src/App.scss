@@ -1,14 +1,38 @@
 $mydarkolive: #6e8a2f;
+$mydarkolive1: rgba(110, 138, 47, 0.2);
 $mymildolive: #a1be39;
+
+.badge-green1 {
+  background: $mydarkolive;
+  color: white;
+}
 
 .bg-green {
   background: $mydarkolive;
 }
+
 .btn-green {
   background: $mydarkolive;
   color: white;
+
   &:hover {
     background: $mymildolive;
     color: yellow;
   }
+}
+
+.btn-small-green {
+  background: $mydarkolive1;
+  color: darkolivegreen;
+  margin-bottom: 20px;
+  min-width: 160px;
+
+  &:hover {
+    background: $mymildolive;
+    color: yellow;
+  }
+}
+
+.profile-img {
+  max-width: 100%;
 }

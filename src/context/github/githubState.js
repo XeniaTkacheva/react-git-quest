@@ -1,10 +1,10 @@
 import React, {useReducer} from "react"
-import axios from 'axios'  
+import axios from 'axios'
 import {GithubContext} from "./githubContext"
 import {githubReduser} from "./githubReducer";
 import {CLEAR_USERS, GET_REPOS, GET_USER, SEARCH_USERS, SET_LOADING} from "../types";
 
-// Временные переменные для GET-запросов
+// Temporary variables for GET requests
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
@@ -25,18 +25,18 @@ export const GithubState = ({children}) => {
     const search = async value => {
         setLoading()
 
-        const responce = await axios.get(
+        const response = await axios.get(
             withCreds(`https://api.github.com/search/users?q=${value}&`)
         )
         dispatch({
             type: SEARCH_USERS,
-            payload: responce.data.items
+            payload: response.data.items
         })
     }
 
     const getUser = async name => {
         setLoading()
-        const response =await  axios.get(
+        const response = await axios.get(
             withCreds(`https://api.github.com/users/${name}?`)
         )
         dispatch({
@@ -52,7 +52,7 @@ export const GithubState = ({children}) => {
         )
         dispatch({
             type: GET_REPOS,
-            payload: []
+            payload: response.data
         })
     }
 
